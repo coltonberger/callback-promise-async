@@ -7,11 +7,10 @@ const joiner = async () => {
     // You cannot use fs.readFileSync here
     // Use https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback
     // Use the `await` operator to avoid manually returning a promise (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) LINK DOESNT WORK!!!!
-    let output = [];
-
     const users = JSON.parse(await readFileAsync('./users.json'));
     const books = JSON.parse(await readFileAsync('./books.json'));
     const reviews = JSON.parse(await readFileAsync('./reviews.json'));
+    let output = [];
 
     for (let review of reviews) {
       for (let book of books) {
